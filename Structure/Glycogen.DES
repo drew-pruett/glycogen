@@ -1,0 +1,241 @@
+<structure><name> Glycogen </name>
+<variables>
+
+<var><name>  V_max_ra </name></var>
+<var><name> V_max_rb </name></var>
+<var><name> V_GPa  </name></var>
+<var><name> V_GPb </name></var>
+<var><name>  phi_GP  </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> GLY</name>
+  <integralname> GLY </integralname>
+  <dervname> dGLY </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> G1P </name>
+  <integralname> G1P </integralname>
+  <dervname> dG1P </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> G6P </name>
+  <integralname> G6P </integralname>
+  <dervname> dG6P </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> F6P </name>
+  <integralname> F6P </integralname>
+  <dervname> dF6P </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> FBP </name>
+  <integralname> FBP </integralname>
+  <dervname> dFBP </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> DHAP </name>
+  <integralname> DHAP </integralname>
+  <dervname> dDHAP </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> GAP </name>
+  <integralname> GAP </integralname>
+  <dervname> dGAP </dervname>
+  <errorlim> </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> 13BPG  </name>
+  <integralname> 13BPG  </integralname>
+  <dervname> d13BPG </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> 3PG </name>
+  <integralname> 3PG </integralname>
+  <dervname> d3PG </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> 2PG </name>
+  <integralname> 2PG </integralname>
+  <dervname> d2PG </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> PEP </name>
+  <integralname> PEP </integralname>
+  <dervname> dPEP </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> PYR </name>
+  <integralname> PYR </integralname>
+  <dervname> dPYR</dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> LAC </name>
+  <integralname> LAC </integralname>
+  <dervname> dLAC </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Pi </name>
+  <integralname> Pi </integralname>
+  <dervname> dPi </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ADP </name>
+  <integralname> ADP </integralname>
+  <dervname> dADP </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ATP </name>
+  <integralname> ATP </integralname>
+  <dervname> dATP </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> AMP </name>
+  <integralname> AMP </integralname>
+  <dervname> dAMP </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> PCr </name>
+  <integralname> PCr </integralname>
+  <dervname> dPCr </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Cr </name>
+  <integralname> Cr </integralname>
+  <dervname> dCr </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> NADH </name>
+  <integralname> NADH </integralname>
+  <dervname> dNADH </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> NAD </name>
+  <integralname> NAD </integralname>
+  <dervname> dNAD </dervname>
+  <errorlim>  </errorlim>
+</diffeq>
+</equations>
+
+<definitions >
+<block><name> Parms </name>
+</block>
+
+<block><name> Dervs </name>
+
+
+
+<def><name> V_max_ra </name><val> V_max_f_GPa * k_GLY_b * k_i_G1P / ( k_i_GLY_f * k_Pi * k_eq_GPa ) </val></def>
+<def><name> V_max_rb </name><val> V_max_f_GPb * k_i_GLY_b * k_G1P / ( k_GLY_f * k_i_Pi * k_eq_GPb ) </val></def>
+
+<def><name> V_GPa  </name><val> ( ( ( V_max_f_GPa * GLY * Pi  ) / ( k_i_GLY_f * k_Pi ) ) - ( ( V_max_ra * GLY * G1P  ) / ( k_GLY_b * k_i_G1P )  ) ) / ( 1 + ( GLY / k_i_GLY_f ) + ( Pi / k_i_Pi ) + ( GLY / k_i_GLY_b ) + ( G1P / k_i_G1P ) + ( ( GLY * Pi ) /  ( k_GLY_f * k_i_Pi ) ) + ( ( GLY * G1P ) / ( k_GLY_b * k_i_G1P ) ) ) </val></def>
+<def><name>  V_GPb </name><val> ( ( ( V_max_f_GPb * GLY * Pi  ) / ( k_i_GLY_f * k_Pi ) ) - ( ( V_max_rb * GLY * G1P  ) / ( k_i_GLY_b * k_G1P ) ) ) / ( 1 + ( GLY / k_i_GLY_f ) + ( Pi / k_i_Pi ) + ( GLY / k_i_GLY_b ) + ( G1P / k_i_G1P ) + ( ( GLY * Pi ) / ( k_i_GLY_f * k_Pi ) ) + ( ( GLY * G1P ) / ( k_i_GLY_b * k_G1P ) ) ) * ( ( AMP ^ nH / k'_AMP ) / ( AMP ^ nH / k'_AMP + 1 ) ) </val></def>
+<def><name> phi_GP </name><val> ( frac_a * V_GPa ) + ( frac_b * V_GPb ) </val></def>
+<def><name> V_max_r_PGLM </name><val> V_max_f_PGLM * l_G6P / ( k_G1P * k_eq_PGLM )  </val></def>
+<def><name> V_PGLM </name><val> ( ( V_max_f_PGLM * G1P / k_G1P ) - ( V_max_r_PGLM * G6P / k_G6P ) / ( 1 + ( G1P / k_G1P ) + ( G6P / k_G6P ) ) </val></def>
+<def><name> V_max_f_PGI </name><val> V_max_r_PGI * k_G6P * K_eq_PGI / k_F6P </val></def>
+<def><name> V_PGI </name><val> ( ( V_max_f_PGI * G6P / K_G6P ) - ( V_max_r_PGI * F6P / k_F6P ) ) / ( 1 + ( G6P / k_G6P ) + ( F6P / k_F6P ) ) </val></def>
+<def><name> Delta  </name><val> ( 1 + ( F6P / k_F6P ) ) * ( 1 + ( ATP / k_ATP ) ) + ( ADP / k_ADP ) + ( ( FBP / k_FBP ) * ( 1 + ( ADP / k_ADP ) ) ) </val></def>
+<def><name> Delta'  </name><val> ( 1 + ( F6P / k'_F6P ) ) * ( 1 + ( ATP / k'_ATP ) ) + ( ADP / k'_ADP ) + ( ( FBP / k'_FBP ) * ( 1 + ( ADP / k'_ADP ) ) ) </val></def>
+<def><name> alpha </name><val> ( k_F6P * k_ATP ) / ( k'_F6P * k'_ATP ) </val></def>
+<def><name> L </name><val> L0 * ( ( ( 1 + ( ATP / k_i_ATP ) ) / ( 1 + ( d * ATP / k_i_ATP ) ) ) * ( ( 1 + ( e * AMP / k_a_AMP ) ) / ( 1 + ( AMP / k_a_AMP ) ) ) ) ^ 4 </val></def>
+<def><name> V_max_r_PFK </name><val> V_max_f_PFK * k_ADP * k_FBP / ( k_ATP * k_F6P ) </val></def>
+<def><name> V_PFK </name><val> ( ( V_max_f_PFK * ATP * F6P / ( k_ATP * k_F6P ) ) - ( V_max_r_PFK * ADP * FBP / ( k_ADP * k_FBP ) )  ) / Delta * ( ( 1 + ( alpha * L * ( ( Delta' / Delta ) ^ 3 ) ) ) /  ( 1 + ( L * ( ( Delta' / Delta ) ^ 4 ) ) ) ) </val></def>
+<def><name> V_max_r_ALD </name><val> V_max_f_ALD * k_DHAP * k_GAP / ( k_FBP * k_eq_ALD )  </val></def>
+<def><name> V_ALD </name><val> ( ( V_max_f_ALD * FBP / k_FBP ) - ( V_max_r_ALD * DHAP * GAP / ( k_DHAP * k_GAP ) ) ) / ( 1 + ( FBP / k_FBP ) + ( DHAP / k_DHAP ) + ( GAP / k_GAP ) ) </val></def>
+<def><name> V_max_r_TPI </name><val> V_max_f_TPI * k_DHAP / ( k_GAP * k_eq_TPI ) </val></def>
+<def><name> V_TPI </name><val> ( ( V_max_f_TPI * GAP / k_GAP ) - ( V_max_r_TPI * DHAP / k_DHAP ) ) / ( 1 + ( GAP / k_GAP ) + ( DHAP / k_DHAP ) ) </val></def>
+<def><name> V_max_r_GAPDH </name><val> V_max_f_GAPDH * k_13BPG * k_NADH / ( k_GAP * k_NAD * k_Pi * k_eq_GAPDH ) </val></def>
+<def><name> denom_GAPDH </name><val> 1 + ( GAP / k_GAP ) + ( NAD / k_NAD ) + ( Pi / k_Pi ) + ( GAP * NAD / ( k_GAP * k_NAD ) ) + ( GAP * NAD * Pi / ( k_GAP * k_NAD * k_pi ) ) + ( 13DPG / k_13DPG ) + ( NADH / k_NADH ) + ( 13BPG * NADH / ( k_13BPG * k_NADH ) ) </val></def>
+<def><name> V_GAPDH </name><val> ( ( V_max_f_GAPDH * GAP * NAD * Pi / ( k_GAP * k_NAD * k_Pi ) ) - ( V_max_r_GAPDH * 13BPG * NADH / ( k_13BPH * k_NADH ) ) ) / denom_GAPDH</val></def>
+<def><name> V_max_f_PGK  </name><val> V_max_r_PGK * k_13BPG * k_ADP * k_eq_PGK / ( k_3PG * k_ATP ) </val></def>
+<def><name> V_PGK </name><val> ( ( V_max_f_PGK * 13BPG * ADP / ( k_13BPG * k_ADP ) ) - ( V_max_r_PGK * 3PG * ATP / ( k_3PG * k_ATP ) ) ) / ( 1 + ( 13BGP / k_13BGP ) + ( ADP / k_ADP ) + ( 13BPG * ADP / ( k_13BPG * k_ADP ) ) + ( 3PG / k_3PG ) + ( ATP / k_ATP ) + ( 3PG * ATP / ( k_3PG * k_ATP ) ) ) </val></def>
+<def><name> V_max_r_PGM </name><val> V_max_f_PGM * k_2PG / ( k_3PG * k_eq_PGM ) </val></def>
+<def><name> V_PGM </name><val> ( ( V_max_f_PGM * 3PG / k_3PG ) - ( V_max_r_PGM * 2PG / k_2PG ) ) / ( 1 + ( 3PG / k_3PG ) + ( 2PG / k_2PG ) )  </val></def>
+<def><name> V_max_r_ENOL </name><val> V_max_f_ENOL * k_PEP / ( k_2PG * k_eq_ENOL ) </val></def>
+<def><name> V_ENOL </name><val> ( ( V_max_f_ENOL * 2PG / k_2PG ) - ( V_max_r_ENOL * PEP / k_PEP ) ) / ( 1 + ( 2PG / k_2PG ) + ( PEP / k_PEP ) )  </val></def>
+<def><name>  V_max_r_PK </name><val> V_max_f_PK * k_ATP * k_PYR / ( k_PEP * k_ADP * k_eq_PK ) </val></def>
+<def><name> V_PK </name><val> ( ( V_max_f_PK * PEP * ADP / ( k_PEP * k_ADP ) ) - ( V_max_r_PK * PYR * ATP / ( k_PYR * k_ATP ) ) ) / ( 1 + ( PEP / k_PEP ) + ( ADP / k_ADP ) + ( PEP * ADP / ( k_PEP * k_ADP ) ) + ( PYR / k_PYR ) + ( ATP / k_ATP )  + ( PYR * ATP / ( k_PYR * k_ATP ) ) ) </val></def>
+<def><name>  V_max_r_LDH </name><val> V_max_f_LDH * k_LAC * k_NAD / ( k_PYR * k_NADH * k_eq_LDH ) </val></def>
+<def><name> V_LDH </name><val> ( ( V_max_f_LDH * PYR * NADH / ( k_PYR * k_NADH ) ) - ( V_max_r_LDH * LAC * NAD / ( k_LAC * k_NAD ) ) ) / ( 1 + ( PYR / k_PYR ) + ( NADH / k_NADH ) + ( PYR * NADH / ( k_PYR * k_NADH ) ) + ( LAC / k_LAC ) + ( NAD / k_NAD ) + ( LAC * NAD / ( k_NAD * k_LAC ) ) )   </val></def>
+<def><name> V_max_f_CK  </name><val> V_max_r_CK * k_i_ATP * k_Cr * k_eq_CK / ( k_i_ADP * k_PCr ) </val></def>
+<!-- in the following, the authors switched r and f -->
+<def><name> V_CK </name><val> ( ( V_max_f_CK * ATP * Cr / ( k_i_ATP * k_Cr ) ) - ( V_max_r * ADP * PCr / ( k_i_ADP * k_PCr ) ) ) / ( 1 + ( ADP / k_i_ADP ) + ( PCr / k_i_PCr ) + ( ADP * PCr / ( k_i_ADP * k_PCr ) ) + ( ATP / k_ATP ) + ( ATP * Cr / ( k_i_ATP * k_Cr )  ) </val></def>
+<def><name> V_max_r_ADK </name><val> V_max_f_ADK * k_ADP * k_ADP / ( k_ATP * k_AMP * k_eq_ADK ) </val></def>
+<def><name> V_ADK  </name><val> ( ( V_max_f_ADK * ATP * AMP / ( k_ATMP * k_AMP ) ) - ( V_max_r_ADK * ADP * ADP / ( k_ADP ^ 2 ) ) ) / ( 1 + ( ATP / k_ATP ) + ( AMP / k_AMP ) + ( ATP * AMP / ( k_ATP * k_AMP ) ) + ( 2 * ADP / k_ADP ) + ( ADP * ADP / ( k_ADP ^ 2 ) ) )  </val></def>
+
+<def><name> dGLY </name><val> - phi_GP </val></def>
+<def><name> dG1P </name><val> phi_GP - V_PGLM </val></def>
+<def><name> dG6P </name><val> V_PGLM - V_PGI </val></def>
+<def><name> dF6P </name><val> V_PGI - V_PFK </val></def>
+<def><name> dFBP </name><val> V_PFK - V_ALD </val></def>
+<def><name> dDHAP </name><val> V_ALD + V_TPI </val></def>
+<def><name> dGAP </name><val> V_ALD - V_TPI - V_GAPDH </val></def>
+<def><name> d13BPG </name><val> V_GAPDH - V_PGK </val></def>
+<def><name> d3PG </name><val> V_PGK - V_PGM </val></def>
+<def><name> d2PG </name><val> V_PGM - V_ENOL </val></def>
+<def><name> dPEP </name><val> V_ENOL - V_PK </val></def>
+<def><name> dPYR </name><val> V_PK - V_LDH </val></def>
+<def><name> dLAC </name><val> V_LDH - outflow </val></def>
+<def><name> dPi </name><val> - phi_GP - V_GAPDH + V_ATPase </val></def>
+<def><name> dADP </name><val> V_PFK - V_PGK + V_PK + ( 2 * V_ADK ) + V_CK + V_ATPase </val></def>
+<def><name> dATP </name><val> -VPFK + V_PGK + V_PK - V_ADK - V_CK - V_ATPase  </val></def>
+<def><name> dAMP </name><val> - V_ADK </val></def>
+<def><name> dPCr </name><val> V_CK </val></def>
+<def><name> dCr </name><val> -V_CK </val></def>
+<def><name> dNADH </name><val> V_GAPDH - V_LDH </val></def>
+<def><name> dNAD </name><val> - V_GAPDH + V_LDH </val></def>
+
+
+</block>
+
+<block><name> Wrapup </name>
+
+</block>
+
+</definitions>
+</structure>
+
+( ( ( V_max_f * A * B  ) / ( k_a * k_b ) ) - ( ( V_max_r * P * Q  ) / ( k_p * k_q ) ) ) / ( 1 + ( A / k_a ) + ( B / k_b ) + ( P / k_p ) + ( Q / k_q ) + ( ( A * B ) / ( k_a * k_b ) ) + ( ( P * Q ) / ( k_p * k_q ) ) )

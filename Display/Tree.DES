@@ -1,0 +1,10 @@
+
+<tree>
+
+<leaf>
+  <name> Dashboard</name>
+  <label> Dashboard </label>
+  <parent> MAINMENU </parent>
+</leaf>
+
+</tree>

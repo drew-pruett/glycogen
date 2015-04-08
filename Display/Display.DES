@@ -1,0 +1,16 @@
+
+<?path Display\ ?>
+
+<display>
+
+<common>
+
+<addarrowsnewline/>
+
+<?include Tree.DES ?>
+
+</common>
+
+<?include Dashboard.DES ?>
+
+</display>

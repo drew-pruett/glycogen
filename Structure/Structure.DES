@@ -1,0 +1,23 @@
+
+<?path Structure\ ?>
+
+<?include Glycogen.DES ?>
+
+<structure><name> Structure </name>
+
+<definitions>
+
+<block><name> Parms </name>
+<call> Glycogen.Parms </call>
+</block>
+
+<block><name> Dervs </name>
+<call> Glycogen.Dervs </call>
+</block>
+
+<block><name> Wrapup </name>
+<call> Glycogen.Wrapup </call>
+</block>
+
+</definitions>
+</structure>
