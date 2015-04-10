@@ -340,12 +340,11 @@
 
 <def><name> phi_GP </name><val> ( frac_a * V_GPa ) + ( frac_b * V_GPb ) </val></def>
 <def><name> V_max_r_PGLM </name><val> V_max_f_PGLM * k_G6P_PGLM / ( k_G1P_PGLM * k_eq_PGLM )  </val></def>
-
 <def><name> V_PGLM </name><val> ( ( V_max_f_PGLM * G1P / k_G1P_PGLM ) - ( V_max_r_PGLM * G6P / k_G6P_PGLM ) ) / ( 1 + ( G1P / k_G1P_PGLM  ) + ( G6P / k_G6P_PGLM  ) ) </val></def>
 
 <def><name> V_max_f_PGI </name><val> V_max_r_PGI * k_G6P_PGI * k_eq_PGI / k_F6P_PGI </val></def>
-
 <def><name> V_PGI </name><val> ( ( V_max_f_PGI * G6P / k_G6P_PGI ) - ( V_max_r_PGI * F6P / k_F6P_PGI ) ) / ( 1 + ( G6P / k_G6P_PGI ) + ( F6P / k_F6P_PGI ) ) </val></def>
+
 <def><name> Delta  </name><val> ( 1 + ( F6P / k_F6P_PFK ) ) * ( 1 + ( ATP / k_ATP_PFK ) ) + ( ADP / k_ADP_PFK ) + ( ( FBP / k_FBP_PFK ) * ( 1 + ( ADP / k_ADP_PFK ) ) ) </val></def>
 <def><name> Delta'  </name><val> ( 1 + ( F6P / k'_F6P_PFK ) ) * ( 1 + ( ATP / k'_ATP_PFK ) ) + ( ADP / k'_ADP_PFK ) + ( ( FBP / k'_FBP_PFK ) * ( 1 + ( ADP / k'_ADP_PFK ) ) ) </val></def>
 <def><name> alpha </name><val> ( k_F6P_PFK * k_ATP_PFK ) / ( k'_F6P_PFK * k'_ATP_PFK ) </val></def>
@@ -359,8 +358,10 @@
 <def><name> V_max_r_GAPDH </name><val> V_max_f_GAPDH * k_c13BPG_GAPDH * k_NADH_GAPDH / ( k_GAP_GAPDH * k_NAD_GAPDH * k_Pi_GAPDH * k_eq_GAPDH ) </val></def>
 <def><name> denom_GAPDH </name><val> 1 + ( GAP / k_GAP_GAPDH  ) + ( NAD / k_NAD_GAPDH  ) + ( Pi / k_Pi_GAPDH  ) + ( GAP * NAD / ( k_GAP_GAPDH  * k_NAD_GAPDH  ) ) + ( GAP * NAD * Pi / ( k_GAP_GAPDH  * k_NAD_GAPDH  * k_Pi_GAPDH  ) ) + ( c13BPG / k_c13BPG_GAPDH  ) + ( NADH / k_NADH_GAPDH  ) + ( c13BPG * NADH / ( k_c13BPG_GAPDH  * k_NADH_GAPDH  ) ) </val></def>
 <def><name> V_GAPDH </name><val> ( ( V_max_f_GAPDH * GAP * NAD * Pi / ( k_GAP_GAPDH  * k_NAD_GAPDH  * k_Pi_GAPDH  ) ) - ( V_max_r_GAPDH * c13BPG * NADH / ( k_c13BPG_GAPDH * k_NADH_GAPDH ) ) ) / denom_GAPDH</val></def>
+
 <def><name> V_max_f_PGK  </name><val> V_max_r_PGK * k_c13BPG_PGK   * k_ADP_PGK   * k_eq_PGK / ( k_3PG_PGK * k_ATP_PGK   ) </val></def>
 <def><name> V_PGK </name><val> ( ( V_max_f_PGK * c13BPG * ADP / ( k_c13BPG_PGK * k_ADP_PGK   ) ) - ( V_max_r_PGK * c3PG * ATP / ( k_3PG_PGK *  k_ATP_PGK   ) ) ) / ( 1 + ( c13BPG / k_c13BPG_PGK   ) + ( ADP / k_ADP_PGK   ) + ( c13BPG * ADP / ( k_c13BPG_PGK   * k_ADP_PGK   ) ) + ( c3PG / k_3PG_PGK   ) + ( ATP / k_ATP_PGK   ) + ( c3PG * ATP / ( k_3PG_PGK   * k_ATP_PGK   ) ) ) </val></def>
+
 <def><name> V_max_r_PGM </name><val> V_max_f_PGM * k_2PG_PGM / ( k_3PG_PGM  * k_eq_PGM ) </val></def>
 <def><name> V_PGM </name><val> ( ( V_max_f_PGM * c3PG / k_3PG_PGM  ) - ( V_max_r_PGM * c2PG / k_2PG_PGM  ) ) / ( 1 + ( c3PG /  k_3PG_PGM  ) + ( c2PG / k_2PG_PGM  ) )  </val></def>
 <def><name> V_max_r_ENOL </name><val> V_max_f_ENOL * k_PEP_ENOL  / ( k_2PG_ENOL  * k_eq_ENOL ) </val></def>

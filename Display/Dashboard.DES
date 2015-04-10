@@ -4,7 +4,7 @@
    <row> 2.0 </row>
    <col> 1.0 </col>
    <high> 60 </high>
-   <wide> 30.0 </wide>
+   <wide> 60.0 </wide>
    <title> Lactate </title>
 <structurename> Glycogen </structurename>
 
@@ -29,7 +29,97 @@
 </showgraph>
 
 <showgraph>
+  <row> 2.4 </row><col> 31.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> AMP </name>
+      <label> AMP </label>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <yvar>
+      <name> ADP </name>
+      <label> ADP </label>
+      <linecolor> RED </linecolor>
+    </yvar>
+    <yvar>
+      <name> ATP </name>
+      <label> ATP </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> Pi </name>
+      <label> Pi </label>
+      <linecolor> BLACK </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 1 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showgraph>
   <row> 10.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Cr </name>
+      <label> Cr </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> PCr </name>
+      <label> PCr </label>
+      <linecolor> RED </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 1 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showgraph>
+  <row> 10.4 </row><col> 31.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> G1P </name>
+      <label> G1P </label>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <yvar>
+      <name> G6P </name>
+      <label> G6P </label>
+      <linecolor> RED </linecolor>
+    </yvar>
+    <yvar>
+      <name> F6P </name>
+      <label> F6P </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 1 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showgraph>
+  <row> 19.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
   <leftmargin> 6 </leftmargin>
   <xaxis>
     <name> System.X </name>
@@ -48,6 +138,65 @@
       <linecolor> RED </linecolor>
     </yvar>
     <scale>
+      <min> 0 </min><max> 1 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showgraph>
+  <row> 19.4 </row><col> 31.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> FBP </name>
+      <label> FBP </label>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <yvar>
+      <name> DHAP </name>
+      <label> DHAP </label>
+      <linecolor> RED </linecolor>
+    </yvar>
+    <yvar>
+      <name> GAP </name>
+      <label> GAP </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 0.1 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showgraph>
+  <row> 28.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> c13BPG </name>
+      <label> 13BPG </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> c3PG </name>
+      <label> 3PG </label>
+      <linecolor> RED </linecolor>
+    </yvar>
+    <yvar>
+      <name> c2PG </name>
+      <label> 2PG </label>
+      <linecolor> GREEN </linecolor>
+    </yvar>    <scale>
       <min> 0 </min><max> 1 </max>
     </scale>
   </yaxis>
